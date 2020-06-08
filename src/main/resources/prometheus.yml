@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s # Default is every minute
+  evaluation_interval: 15s # Default is every minute
+
+# Loar rules once periodically evaluate them according to the global evaluation_interval
+rule_files:
+  # - first_rule.yml
+  # - second_rule.yml
+
+# A scrape configuration containing exactly  one endpoint to scrape
+scrape_configs:
+  # The job name is added as a label 'job=<job_name> to any timeseries scraped from this config
+  - job_name: 'prometheus'
+    #metrics_path defaults to '/metrics'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'spring-actuator'
+    scrape_interval: 5s
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['movie-quote-service:8080']
+  - job_name: 'grafana'
+    scrape_interval: 1m
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8080']

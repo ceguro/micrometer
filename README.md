@@ -6,7 +6,7 @@ You must download Prometheus and Grafana - to local tests you can use dockers li
 - docker pull prom/prometheus
 - docker pull grafana/grafana 
 
-and run like these:
+Ypu can run those docker like these:
 
 - docker run -d --name prometheus -p 9090:9090 prom/prometheus
 - docker run -d --name grafana --link prometheus -p 3000:3000 grafana/grafana

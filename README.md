@@ -1,5 +1,5 @@
 # micrometer
-Spring's Project with MIcrometer, Prometheus and Grafana
+Spring's Project with Micrometer, Prometheus and Grafana
 
 You must download Prometheus and Grafana - to local tests you can use dockers like these:
 
